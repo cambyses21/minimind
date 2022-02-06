@@ -7,6 +7,8 @@ For example, given the list [17, 11, 60, 25, 150, 75, 31, 120], you can assume t
 */
 
 const test1 = [17, 11, 60, 25, 150, 75, 31, 120];
+const test2 = [5, 4, 1, 3, 5, 3, 1];
+const test3 = [10,10,10,10];
 
 function maxProfitDays(arr) {
     let objArr = [];
@@ -17,7 +19,7 @@ function maxProfitDays(arr) {
 }
 
 console.log(maxProfitDays(test1));
-
-
+console.log(maxProfitDays(test2));
+console.log(maxProfitDays(test3));
 
 // =================================
