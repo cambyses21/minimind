@@ -39,8 +39,35 @@ function caesarCypher(message, shift) {
 
 }
 
-function symbolCypher(message){
+function symbolCypher(str){
+	const symbols = {
+    'i': '!',
+    '!': 'i',
+    'l': '1',
+    '1': 'l',
+    's': '$',
+    '$': 's',
+    'o': '0',
+    '0': 'o',
+    'a': '@',
+    '@': 'a',
+    'e': '3',
+    '3': 'e',
+    'b': '6',
+    '6': 'b'
+  }
 
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    let char = str.toLowerCase()[i];
+
+    if (symbols[char]) {
+      output += symbols[char]
+    } else {
+      output += char;
+    }
+  }
+  return output;
 }
 
 function reverseCypher(message){
@@ -48,8 +75,7 @@ function reverseCypher(message){
     //arr.map(elem => elem.split().sort((a, b) => b - a).join());
 }
 
-let test = 'A test sentence for encoding';
-console.log(reverseCypher(test));
-console.log(symbolCypher(test));
-console.log(caesarCypher(test,1));
-
+module.exports.shiftedKey = shiftedKey;
+module.exports.caesarCypher = caesarCypher;
+module.exports.symbolCypher = symbolCypher;
+module.exports.reverseCypher = reverseCypher;
